@@ -27,5 +27,31 @@ namespace CSProject
                 else hWorked = 0;
             }
         }
+
+        public Staff(string name, float rate)
+        {
+            string NameOfStaff = name;
+            float hourlyRate = rate;
+        }
+
+        public virtual void CalculatePay() // virtual- may be overwritten and no return value
+        {
+            Console.WriteLine("Calculating pay ...");
+
+            float BasicPay = hWorked * hourlyRate;
+
+            TotalPay = BasicPay;
+        }
+
+        public override string ToString()
+        {
+            return
+                "Name of Staff: " + NameOfStaff +
+                ", Hourly Rate: " + hourlyRate +
+                ", Hours Worked: " + HoursWorked +
+                ", Total Pay: " + TotalPay;
+        }
+        
+
     }
 }

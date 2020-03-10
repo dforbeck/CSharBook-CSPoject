@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSProject
 {
-    class Staff
+    public class Staff
     {
         private float hourlyRate;
         private int hWorked;
@@ -50,8 +50,6 @@ namespace CSProject
                 ", Hourly Rate: " + hourlyRate +
                 ", Hours Worked: " + HoursWorked +
                 ", Total Pay: " + TotalPay;
-        }
-        
-
+        }        
     }
 }

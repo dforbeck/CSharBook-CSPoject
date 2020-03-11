@@ -20,6 +20,8 @@ namespace CSProject
             {
                 using (StreamReader sr = new StreamReader("staff.txt"))
                 {
+
+//TO DO
                     while (!sr.EndOfStream)
                     {
                         Console.WriteLine(sr.ReadLine());

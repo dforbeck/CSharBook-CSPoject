@@ -31,7 +31,7 @@ namespace CSProject
             return
                 "Name of Staff: " + NameOfStaff +
                 ", Manager Hourly Rate: " + managerHourlyRate +
-                ", Hours Worked: " + Allowance+
+                ", Allowance: " + Allowance+
                 ", Total Pay: " + TotalPay;
         }
     }            

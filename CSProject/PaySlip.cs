@@ -40,19 +40,30 @@ namespace CSProject
                     sw.WriteLine("Hours worked: {0}", f.HoursWorked);
                     sw.WriteLine("");
                     sw.WriteLine("Basic Pay: {0}", f.BasicPay);
-                    if (f[0].GetType() == typeof(Manager))
-                        sw.WriteLine("Allowance: {0:C}", );
-                
-
-
+                    //NEXT SET OF INSTRUCTIONS IS FOR NEXT SINGLE LINE ON PAYSLIP
+                    if (myStaff[0].GetType() == typeof(Manager))  //checks what type of object in instance
+                        sw.WriteLine("Allowance: {0:C}", ((Manager)f).Allowance); //property from appr.object
+                    else if (myStaff[0].GetType() == typeof(Admin))  //checks what type of object in instance
+                        sw.WriteLine("Overtime: {0:C}", ((Admin)f).Overtime); //property from appr.object
+                    else
+                        sw.WriteLine("Don't know if get Allowance or Overtime.");
+                    //END
+                    sw.WriteLine("");
+                    sw.WriteLine("=================================");
+                    sw.WriteLine("Total Pay: {0:C}", f.TotalPay);                
 
                     sw.Close();
                 }
-
             }
+        }
 
-
-
+        public void GenerateSummary(List<Staff> myStaff)
+        {
+            var result =
+                from staff in myStaff
+                where staff.HoursWorked < 10
+                orderby staff.NameOfStaff ascending
+                select new { staff.NameOfStaff, staff.HoursWorked };
         }
 
     }

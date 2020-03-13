@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSProject
 {
-    public class Admin : Staff
+    class Admin : Staff
     {
         private const float overtimeRate = 15.5F;
         private const float adminHourlyRate = 30;

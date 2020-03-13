@@ -18,24 +18,30 @@ namespace CSProject
 
             if (File.Exists("staff.txt"))
             {
-                using (StreamReader sr = new StreamReader("staff.txt"))
+                using (StreamReader sr = new StreamReader(path))
                 {
-
-//TO DO
-                    while (!sr.EndOfStream)
+                    while (sr.EndOfStream != true)
                     {
-                        Console.WriteLine(sr.ReadLine());
-                        string[] substrings = result.Split(separator, StringSplitOptions.None)
+                        string employeeLine = sr.ReadLine();
+                        result = employeeLine.Split(separator, StringSplitOptions.None);
+                        
+                        if (result[1] == "Manager")
+                        {
+                            Manager memberManager = new Manager(result[0]);
+                            myStaff.Add(memberManager);
+                        }
+                        else if (result[1] == "Admin")
+                        {
+                            Admin memberAdmin = new Admin(result[0]);
+                            myStaff.Add(memberAdmin);
+                        }
                     }
                     sr.Close();
                 }
             }
-            else
-            {
-                Console.WriteLine("Reading text file didn't work.");
-            }
+            else Console.WriteLine("Our test file does not exist.");
 
-            return <List>myStaff;
+            return myStaff;
         }
     }
 }

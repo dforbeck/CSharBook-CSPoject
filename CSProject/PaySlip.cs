@@ -72,15 +72,20 @@ namespace CSProject
                 Console.WriteLine("Staff with less than 10 working hours:");
                 Console.WriteLine("");
 
-                foreach (Staff lessThanTen in result)
+                foreach (var lessThanTen in result)
                 {
                     Console.WriteLine("Name of Staff: {0}, Hours Worked: {1}", lessThanTen.NameOfStaff, lessThanTen.HoursWorked);
                 }
 
                 sw.Close();
-
             }
+        }
 
+        public override string ToString()
+        {
+            return
+                "Month: " + month +
+                ", Year: " + year;
         }
     }
 }

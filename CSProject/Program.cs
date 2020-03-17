@@ -49,11 +49,14 @@ namespace CSProject
                 }
             }
 
-            for (int i =0; i < myStaff.Count; i++)
+            myStaff = fr.ReadFile();
+
+
+            for (int i = 0; i < myStaff.Count; i++)
             {
                 try
                 {
-                    Console.WriteLine("Enter hours worked for {0}", myStaff[i].NameOfStaff);
+                    Console.WriteLine("Enter hours worked for {0}:", myStaff[i].NameOfStaff);
                     myStaff[i].HoursWorked = Convert.ToInt32(Console.ReadLine());
 
                     myStaff[i].CalculatePay();

@@ -14,7 +14,7 @@ namespace CSProject
             List<Staff> myStaff = new List<Staff>();
             string[] result = new string[2];
             string path = "staff.txt"; // file is in Debug folder with .exe
-            string[] separator = { ", " };
+            string[] separator = {", "};
 
             if (File.Exists("staff.txt"))
             {
